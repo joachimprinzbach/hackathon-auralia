@@ -5,6 +5,7 @@ import {HttpClient} from 'aurelia-fetch-client';
 export class App {
     hotels: any = undefined;
     http: any = undefined;
+    searchFilter: string = "";
 
     constructor(http) {
         this.http = http;
@@ -22,4 +23,14 @@ export class App {
                 console.log('Error getting hotels from remote: ' + error.message);
             });
     };
+    
+get filterHotels():array {
+    let searchString = this.searchFilter;
+    if (this.searchFilter){
+            return this.hotels.filter(function(hotelItem) { return hotelItem.hotelName.toLowerCase().includes(searchString.toLowerCase())});  
+    }
+else {
+    return this.hotels;
+}
+    }
 }

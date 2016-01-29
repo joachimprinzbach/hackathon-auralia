@@ -3,6 +3,8 @@
         <require from="bootstrap/css/bootstrap.css"></require>
         <h1>Hotels</h1>
 
+        <input type="text" value.bind="searchFilter" />
+
         <table class="table table-striped">
             <thead>
                 <th>Hotel Name</th>
@@ -11,7 +13,7 @@
                 <th>Telefon</th>
             </thead>
             <tbody>
-                <tr repeat.for="hotel of hotels">
+                <tr repeat.for="hotel of filterHotels">
                     <td>${hotel.hotelName}</td>
                     <td>${hotel.name.first}</td>
                     <td>${hotel.name.last}</td>

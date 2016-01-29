@@ -2,15 +2,16 @@ import {inject} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
 
 @inject(HttpClient)
-export class App {    
+export class App {
     hotels: any = undefined;
+    http: any = undefined;
 
     constructor(http) {
-    this.http = http;
-    this.retrieveHotels();   
-  };
-    
-    
+        this.http = http;
+        this.retrieveHotels();
+    };
+
+
     retrieveHotels() {
         this.http.fetch('http://localhost:1337/locations')
             .then(response => response.json())
@@ -18,7 +19,7 @@ export class App {
                 this.hotels = data;
             })
             .catch(error => {
-            console.log('Error getting hotels from remote: ' + error.message);
-        });
+                console.log('Error getting hotels from remote: ' + error.message);
+            });
     };
 }

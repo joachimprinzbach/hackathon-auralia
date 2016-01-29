@@ -3,14 +3,19 @@
         <require from="bootstrap/css/bootstrap.css"></require>
         <h1>Hotels</h1>
 
-        <table>
+        <table class="table table-striped">
             <thead>
-                <th>Name</th>
+                <th>Hotel Name</th>
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th>Telefon</th>
             </thead>
             <tbody>
-                <!--foreach in aurelia-->
                 <tr repeat.for="hotel of hotels">
                     <td>${hotel.hotelName}</td>
+                    <td>${hotel.name.first}</td>
+                    <td>${hotel.name.last}</td>
+                    <td>${hotel.phone}</td>
                 </tr>
             </tbody>
         </table>

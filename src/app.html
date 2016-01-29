@@ -1,15 +1,18 @@
 <template>
     <div class="container">
         <require from="bootstrap/css/bootstrap.css"></require>
-        <h1>Camp planning made easy</h1>
+        <h1>Hotels</h1>
 
-        <div>
-            <label>Framework: </label>
-            <input type="text" value.bind="framework">
-        </div>
-
-        <div>
-            <p innerHtml.bind="framework"></p>
-        </div>
+        <table>
+            <thead>
+                <th>Name</th>
+            </thead>
+            <tbody>
+                <!--foreach in aurelia-->
+                <tr repeat.for="hotel of hotels">
+                    <td>${hotel.hotelName}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </template>

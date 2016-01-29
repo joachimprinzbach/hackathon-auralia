@@ -1,12 +1,15 @@
 <template>
-    <h1>Camp planning made easy</h1>
+    <div class="container">
+        <require from="bootstrap/css/bootstrap.css"></require>
+        <h1>Camp planning made easy</h1>
 
-    <div>
-        <label>Framework: </label>
-        <input type="text" value.bind="framework">
-    </div>
+        <div>
+            <label>Framework: </label>
+            <input type="text" value.bind="framework">
+        </div>
 
-    <div>
-        <p innerHtml.bind="framework"></p>
+        <div>
+            <p innerHtml.bind="framework"></p>
+        </div>
     </div>
 </template>
